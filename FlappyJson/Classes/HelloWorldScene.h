@@ -11,13 +11,16 @@
 // When you import this file, you import all the cocos2d classes
 #include "cocos2d.h"
 #include "Box2D.h"
-
+using namespace cocos2d;
 class PhysicsSprite : public cocos2d::CCSprite
 {
 public:
     PhysicsSprite();
+    
     void setPhysicsBody(b2Body * body);
-    virtual bool isDirty(void);
+    
+    virtual bool isDirty(void);//是否需要重新绘制
+    
     virtual cocos2d::CCAffineTransform nodeToParentTransform(void);
 private:
     b2Body* m_pBody;    // strong ref

@@ -107,13 +107,15 @@ void HelloWorld::initPhysics()
 
     b2Vec2 gravity;
     gravity.Set(0.0f, -10.0f);
-    world = new b2World(gravity);
+    world=new b2World(gravity);
 
     // Do we want to let bodies sleep?
     world->SetAllowSleeping(true);
 
     world->SetContinuousPhysics(true);
+    
 
+    
 //     m_debugDraw = new GLESDebugDraw( PTM_RATIO );
 //     world->SetDebugDraw(m_debugDraw);
 
@@ -137,9 +139,9 @@ void HelloWorld::initPhysics()
 
     // Define the ground box shape.
     b2EdgeShape groundBox;
-
+    
     // bottom
-
+    
     groundBox.Set(b2Vec2(0,0), b2Vec2(s.width/PTM_RATIO,0));
     groundBody->CreateFixture(&groundBox,0);
 
